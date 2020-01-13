@@ -4,26 +4,41 @@ import data from "../assets/resources/documents";
 
 class Filter extends Component {
 
-	state = { filterBy: "client_name", searchInput: "" };
+	state = { filterBy: "client_name", searchInput: "", filteredDocuments: [] };
 
-	sendData = (filterBy) => {
 
-	};
+	updateDocument(){
+		var filteredDocuments = []
+
+		for(var i = 0; i < data.documents.length; i++){
+			if(String(data.documents[i][this.state.filterBy]).toLowerCase().includes(String(this.state.searchInput).toLowerCase())){
+				filteredDocuments.push(data.documents[i])
+			}
+		}
+
+		this.setState({filteredDocuments: filteredDocuments}, () => {
+			this.props.parentCallback(this.state);
+		})
+	}
 
 		changeFilter = (event) => {
 				this.setState({filterBy: event.target.value}, () => {
-				  this.props.parentCallback(this.state);
+				  this.updateDocument();
 				})
 		};
 
 			changeSearchInput = (event) => {
 					this.setState({searchInput: event.target.value}, () => {
-					  this.props.parentCallback(this.state);
+					  this.updateDocument();
 					})
 			};
 
+	componentDidMount(){
+		this.updateDocument();
+	}
 
 	render() {
+
     var keys = []
     const result = data.documents[0]
     for (var key in result){
