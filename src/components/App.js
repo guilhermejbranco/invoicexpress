@@ -22,9 +22,8 @@ class App extends Component{
       <div className="App">
         <header className="App-header">
           <Filter parentCallback={this.filterCallbackFunction}></Filter>
-          <Pagination parentData={this.state} parentCallback={this.paginationCallbackFunction}></Pagination>
           <List parentData={this.state}></List>
-
+          <Pagination parentData={this.state} parentCallback={this.paginationCallbackFunction}></Pagination>
         </header>
       </div>
     );
