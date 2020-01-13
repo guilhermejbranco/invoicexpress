@@ -15,7 +15,7 @@ class List extends Component {
                             {document.type} |
                             {document.client_name} |
                             {document.number} |
-                            {document.date} | 
+                            {document.date} |
                             {document.total_w_vat}
           								</div>
           							</li>
