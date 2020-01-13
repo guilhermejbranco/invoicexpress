@@ -18,8 +18,15 @@ class Pagination extends Component {
 	render() {
 
     var items = []
+    var filteredDocuments = []
 
-    for (var i = 1; i <= Math.floor(data.documents.length/7); i++) {
+    for(var i = 0; i < data.documents.length; i++){
+      if(String(data.documents[i][this.props.parentData.filterBy]).toLowerCase().includes(String(this.props.parentData.searchInput).toLowerCase())){
+        filteredDocuments.push(data.documents[i])
+      }
+    }
+
+    for (var i = 1; i <= Math.ceil(filteredDocuments.length/7); i++) {
       if(this.state.currentPage == i){
         items.push(<li class="page-item active"><a class="page-link" href="#">{i}</a></li>)
       }
@@ -33,9 +40,9 @@ class Pagination extends Component {
             <nav aria-label="Page navigation example">
               <ul class="pagination">
 
-                <li className={"page-item" + (this.state.currentPage == 1 ? ' disabled' : '')}><a class="page-link" href="#">Previous</a></li>
+                <li className={"page-item" + (this.state.currentPage == 1 ? ' disabled' : '')}><a class="page-link" href="#" onClick={this.changePage.bind(this, this.state.currentPage - 1)}>Previous</a></li>
                 {items}
-                <li className={"page-item" + (this.state.currentPage == Math.floor(data.documents.length/7) ? ' disabled' : '')}><a class="page-link" href="#">Next</a></li>
+                <li className={"page-item" + (this.state.currentPage == Math.ceil(filteredDocuments.length/7) ? ' disabled' : '')}><a class="page-link" href="#" onClick={this.changePage.bind(this, this.state.currentPage + 1)}>Next</a></li>
               </ul>
             </nav>
         );

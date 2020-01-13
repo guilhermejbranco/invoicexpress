@@ -3,14 +3,26 @@ import '../styles/List.scss';
 import data from "../assets/resources/documents";
 
 class List extends Component {
+
+
 	render() {
+		var filteredDocuments = []
+
+		for(var i = 0; i < data.documents.length; i++){
+			if(String(data.documents[i][this.props.parentData.filterBy]).toLowerCase().includes(String(this.props.parentData.searchInput).toLowerCase())){
+				filteredDocuments.push(data.documents[i])
+			}
+		}
+
 		return (
             <ul className="list-group pt-2 pb-2">
                 {
-          					data.documents.map((document, i) => {
+          					filteredDocuments.map((document, i) => {
           						return (
 												<span>
-												{ String(document[this.props.parentData.filterBy]).toLowerCase().includes(String(this.props.parentData.searchInput).toLowerCase()) &&
+												{ 
+													i >= (this.props.parentData.currentPage - 1) * 7 &&
+													i < (this.props.parentData.currentPage) * 7 &&
           							<li className="list-group-item" key={i}>
           								<div>
                             {document.status} |

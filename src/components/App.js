@@ -7,16 +7,20 @@ import Pagination from './Pagination'
 class App extends Component{
   state = { filterBy: "client_name", searchInput: "", currentPage : 1}
 
-  callbackFunction = (childData) => {
-    this.setState({filterBy: childData.filterBy, searchInput: childData.searchInput, currentPage: childData.currentPage})
+  paginationCallbackFunction = (childData) => {
+    this.setState({currentPage: childData.currentPage})
+  };
+
+  filterCallbackFunction = (childData) => {
+    this.setState({filterBy: childData.filterBy, searchInput: childData.searchInput})
   };
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Filter parentCallback={this.callbackFunction}></Filter>
-          <Pagination parentCallback={this.callbackFunction}></Pagination>
+          <Filter parentCallback={this.filterCallbackFunction}></Filter>
+          <Pagination parentData={this.state} parentCallback={this.paginationCallbackFunction}></Pagination>
           <List parentData={this.state}></List>
 
         </header>
