@@ -1,4 +1,5 @@
-$myColor: red;
+// Utilities
+@import "./variables";
 
 .App {
   text-align: center;
@@ -26,9 +27,6 @@ $myColor: red;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
