@@ -38,6 +38,8 @@ describe('Pagination component', () => {
     expect(wrapper.state('currentPage')).toBe(1);
     instance.changePage(wrapper.state('currentPage') + 1);
     expect(wrapper.state('currentPage')).toBe(2);
+    instance.changePage(1);
+    expect(wrapper.state('currentPage')).toBe(1);
   });
 });
 

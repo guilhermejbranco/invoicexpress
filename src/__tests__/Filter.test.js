@@ -19,12 +19,12 @@ var state = {
   };
 
 test('renders', () => {
-  const { getByText } = render(<Filter parentCallback={filterCallbackFunction}> </Filter>);
+  const { getByText } = render(<Filter parentData={state} parentCallback={filterCallbackFunction}> </Filter>);
 });
 
 describe('Filter component', () => {
   it('should filter by client_name', () => {
-    const  wrapper  = mount(<Filter parentCallback={filterCallbackFunction}/>);
+    const  wrapper  = mount(<Filter parentData={state} parentCallback={filterCallbackFunction}/>);
     const instance = wrapper.instance();
     expect(wrapper.state('searchInput')).toBe("");
     wrapper.find('#searchInput').simulate('change', {
@@ -36,7 +36,7 @@ describe('Filter component', () => {
 
 describe('Filter component', () => {
   it('should change filter by', () => {
-    const  wrapper  = mount(<Filter parentCallback={filterCallbackFunction}/>);
+    const  wrapper  = mount(<Filter parentData={state} parentCallback={filterCallbackFunction}/>);
     const instance = wrapper.instance();
     expect(wrapper.state('filterBy')).toBe("client_name");
     wrapper.find('#filterBy').simulate('change', {
