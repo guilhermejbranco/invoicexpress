@@ -13,8 +13,7 @@ class App extends Component{
   };
 
   filterCallbackFunction = (childData) => {
-    console.log(childData.filteredDocuments)
-    this.setState({filteredDocuments: childData.filteredDocuments})
+    this.setState({filteredDocuments: childData.filteredDocuments, searchInput: childData.searchInput})
   };
 
   render() {

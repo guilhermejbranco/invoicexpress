@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/List.scss';
+import '../styles/_variables.scss';
 
 class List extends Component {
 
@@ -21,6 +22,12 @@ class List extends Component {
 		return (
 				<span className="w-75">
 						<div className="row small">{keys}</div>
+						{this.props.parentData.filteredDocuments.length === 0 &&
+							<span className="small">
+								No results found for
+								<span className="primarycolor font-weight-bold"> "{this.props.parentData.searchInput}"</span>.
+							</span>
+						}
             <ul className="list-group pt-2 pb-2">
                 {
           					this.props.parentData.filteredDocuments.map((document, i) => {

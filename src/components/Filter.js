@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/List.scss';
+import '../styles/Filter.scss';
 import data from "../assets/resources/documents";
 
 class Filter extends Component {

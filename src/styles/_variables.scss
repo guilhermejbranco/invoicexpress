@@ -1,2 +1,10 @@
 $primarycolor: #00BB80;
 $secondarycolor:#007751;
+
+.primarycolor{
+  color: $primarycolor;
+}
+
+.secondarycolor{
+  color: $secondarycolor;
+}
