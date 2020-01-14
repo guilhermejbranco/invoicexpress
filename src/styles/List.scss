@@ -6,8 +6,25 @@
   div{
     color: black;
   }
+  .row{
+    .col{
+      border-left: 1px solid rgba(0,0,0,.125);
+    }
+  }
+}
+
+
+.list-group{
+
+  span { li{background: white; border-top:none;}}
+  span:first-child { li{background: white; border-top:1px solid rgba(0,0,0,.125);}}
+  span:nth-child(odd) { li{background: rgba(0,0,0,0.03); }}
+
 }
 
 .badge{
-  width: 50%;
+  width: 100%;
+  height:100%;
+  padding:5px !important;
+  border-radius: 0px !important;
 }

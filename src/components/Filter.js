@@ -30,6 +30,7 @@ class Filter extends Component {
         filteredDocuments.push(data.documents[i]);
       }
     }
+		filteredDocuments.sort((a,b) => a.client_name.localeCompare(b.client_name));
 
     this.setState({ filteredDocuments: filteredDocuments }, () => {
       this.props.parentCallback(this.state);

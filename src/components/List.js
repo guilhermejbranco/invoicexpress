@@ -23,15 +23,19 @@ class List extends Component {
     var keys = [];
     for (var key in this.props.parentData.filteredDocuments[0]) {
       keys.push(
-        <div className="col col-md-2 font-weight-bold text-left" key={key}>
+        <div className="col col-md-2 font-weight-bold text-left border-0 text-uppercase" key={key}>
           {key}
         </div>
       );
     }
 
     return (
-      <span className="w-75">
-        <div className="row small">{keys}</div>
+      <span className="w-100">
+        <div className="list-group-item small border-0">
+					<div className="row">
+						{keys}
+					</div>
+				</div>
 
         {
 					/*
@@ -58,7 +62,7 @@ class List extends Component {
                   i < this.props.parentData.currentPage * 7 && (
                     <li className="list-group-item text-left">
                       <div className="row small">
-                        <div className="col col-md-2">
+                        <div className="col col-md-2 border-0">
                           <span className={"badge " + dict[document.status]}>
                             {document.status}
                           </span>
