@@ -19,23 +19,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 #### Last test results
 
-PASS  src/__tests__/Filter.test.js
-PASS  src/__tests__/Pagination.test.js
-PASS  src/__tests__/List.test.js
-PASS  src/__tests__/App.test.js
----------------|----------|----------|----------|----------|-------------------|
-File           |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
----------------|----------|----------|----------|----------|-------------------|
-All files      |      100 |      100 |      100 |      100 |                   |
-Filter.js     |      100 |      100 |      100 |      100 |                   |
-List.js       |      100 |      100 |      100 |      100 |                   |
-Pagination.js |      100 |      100 |      100 |      100 |                   |
----------------|----------|----------|----------|----------|-------------------|
-
-Test Suites: 4 passed, 4 total
-Tests:       10 passed, 10 total
-Snapshots:   0 total
-Time:        5.312s, estimated 6s
+![Test Results](/src/assets/resources/test_results.png)
 
 ### `npm run build`
 
