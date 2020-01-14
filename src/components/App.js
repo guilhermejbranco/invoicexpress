@@ -3,7 +3,7 @@ import '../styles/App.scss';
 import List from './List'
 import Filter from './Filter'
 import Pagination from './Pagination'
-import data from "../assets/resources/documents";
+
 
 class App extends Component{
   state = { filterBy: "client_name", searchInput: "", currentPage : 1, filteredDocuments : []}

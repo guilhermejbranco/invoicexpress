@@ -20,10 +20,10 @@ class Pagination extends Component {
 
     for (var i = 1; i <= Math.ceil(this.props.parentData.filteredDocuments.length/7); i++) {
       if(this.state.currentPage === i){
-        items.push(<li class="page-item active"><a class="page-link" href="#">{i}</a></li>)
+        items.push(<li class="page-item active"><button class="page-link" >{i}</button></li>)
       }
       else{
-        items.push(<li class="page-item"><a class="page-link " href="#"  onClick={this.changePage.bind(this, i)}>{i}</a></li>)
+        items.push(<li class="page-item"><button class="page-link "   onClick={this.changePage.bind(this, i)}>{i}</button></li>)
       }
 
     }
@@ -32,9 +32,9 @@ class Pagination extends Component {
             <nav aria-label="Page navigation example"  className="float-right ">
               <ul class="pagination">
 
-                <li className={"page-item" + (this.state.currentPage === 1 ? ' disabled' : '')}><a class="page-link" href="#" onClick={this.changePage.bind(this, this.state.currentPage - 1)}>Previous</a></li>
+                <li className={"page-item" + (this.state.currentPage === 1 ? ' disabled' : '')}><button class="page-link"  onClick={this.changePage.bind(this, this.state.currentPage - 1)}>Previous</button></li>
                 {items}
-                <li className={"page-item" + (this.state.currentPage === Math.ceil(this.props.parentData.filteredDocuments.length/7) ? ' disabled' : '')}><a class="page-link" href="#" onClick={this.changePage.bind(this, this.state.currentPage + 1)}>Next</a></li>
+                <li className={"page-item" + (this.state.currentPage === Math.ceil(this.props.parentData.filteredDocuments.length/7) ? ' disabled' : '')}><button class="page-link"  onClick={this.changePage.bind(this, this.state.currentPage + 1)}>Next</button></li>
               </ul>
             </nav>
         );
