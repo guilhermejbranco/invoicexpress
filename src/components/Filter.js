@@ -4,7 +4,9 @@ import data from "../assets/resources/documents";
 
 class Filter extends Component {
 
-	state = { filterBy: "client_name", searchInput: "", filteredDocuments: [] };
+	state = { filterBy: this.props.parentData.filterBy,
+		 				searchInput: this.props.parentData.searchInput,
+						filteredDocuments: [] };
 
 
 	updateDocument(){
@@ -55,7 +57,7 @@ class Filter extends Component {
 								<div className="row">
 									<div className="col col-md-6">
 
-										<input id="searchInput" className="form-control" type="text" placeholder={"Searching by " + this.state.filterBy} onChange={this.changeSearchInput}></input>
+										<input id="searchInput" className="form-control" type="text" placeholder={"Searching by " + this.state.filterBy} onChange={this.changeSearchInput} value={this.state.searchInput}></input>
 									</div>
 									<div className="col col-md-6">
 										<select id="filterBy" className="form-control form-control-sm h-100" onChange={this.changeFilter} value={this.state.filterBy}>

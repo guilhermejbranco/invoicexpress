@@ -8,19 +8,19 @@ import '../styles/Pagination.scss';
 
 class Pagination extends Component {
 
-  state = {currentPage : 1};
+  state = {currentPage : this.props.parentData.currentPage};
 
 
 
   _handleKeyDown = (event) => {
       switch( event.keyCode ) {
           case NEXT_KEY:
-              if(document.getElementById("searchInput") != document.activeElement){
+              if(document.getElementById("searchInput") !== document.activeElement){
                   this.changePage(this.state.currentPage + 1);
               }
               break;
           case PREVIOUS_KEY:
-              if(document.getElementById("searchInput") != document.activeElement){
+              if(document.getElementById("searchInput") !== document.activeElement){
                   this.changePage(this.state.currentPage - 1);
               }
               break;
@@ -57,8 +57,12 @@ class Pagination extends Component {
 
     var items = []
 
+    if(this.state.currentPage > Math.ceil(this.props.parentData.filteredDocuments.length/7)){
+      this.changePage(Math.ceil(this.props.parentData.filteredDocuments.length/7))
+    }
+
     for (var i = 1; i <= Math.ceil(this.props.parentData.filteredDocuments.length/7); i++) {
-      if(this.state.currentPage === i){
+      if(parseInt(this.state.currentPage) === i){
         items.push(<li className="page-item active" key={i}><button className="page-link" >{i}</button></li>)
       }
       else{
