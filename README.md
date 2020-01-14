@@ -6,9 +6,17 @@ Challenge available at [Challenge Link](https://github.com/weareswat/challenges/
 
 * HTML5
 * [SASS](https://sass-lang.com/)
+  > Mainly used for global variables, such as primaryColor and secondaryColor.
+  > Installation: `npm install node-sass`
 * [Bootstrap](https://getbootstrap.com/)
+  > Used throughout the application, as the backbone structure for the styling.
+  > Installation: `npm install react-bootstrap bootstrap`
 * [React](https://reactjs.org/)
+  > No need for introduction.
+  > Installation: `npx create-react-app invoicexpress`
 * [Enzyme](https://airbnb.io/enzyme/)
+  > Used for all the component testing. Facilitates the unit testing for all methods and elements in each component.
+  > Installation: `npm i --save react@16 react-dom@16` and `npm i --save-dev enzyme enzyme-adapter-react-16`
 
 ## Preview
 
@@ -19,6 +27,7 @@ Challenge available at [Challenge Link](https://github.com/weareswat/challenges/
 The application is organized in four main components:
 
 * App.js
+  > Main component, integrates all the sub-components of the application.
   * List.js
       > Responsible for displaying the main list.
   * Filter.js
