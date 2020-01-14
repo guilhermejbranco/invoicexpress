@@ -20,11 +20,11 @@ The application is organized in four main components:
 
 * App.js
   * List.js
-    Responsible for displaying the main list.
+      > Responsible for displaying the main list.
   * Filter.js
-    Responsible for filtering the list of documents (assets/resources/documents.json) using the inputs and selections available on the header of the application. After filtering the list of documents, it propagates the filteredDocuments to all the components.
+      > Responsible for filtering the list of documents (assets/resources/documents.json) using the inputs and selections available on the header of the application. After filtering the list of documents, it propagates the filteredDocuments to all the components.
   * Pagination.js
-    Responsible for the pagination structure. Besides displaying the pagination on the bottom of the application, when the list of documents is filtered, or when the user chooses a different page, the component propagates de currentPage to the remaining components.
+      > Responsible for the pagination structure. Besides displaying the pagination on the bottom of the application, when the list of documents is filtered, or when the user chooses a different page, the component propagates de currentPage to the remaining components.
 
 ## Available Scripts
 
