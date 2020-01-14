@@ -17,6 +17,26 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+#### Last test results
+
+PASS  src/__tests__/Filter.test.js
+PASS  src/__tests__/Pagination.test.js
+PASS  src/__tests__/List.test.js
+PASS  src/__tests__/App.test.js
+---------------|----------|----------|----------|----------|-------------------|
+File           |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+---------------|----------|----------|----------|----------|-------------------|
+All files      |      100 |      100 |      100 |      100 |                   |
+Filter.js     |      100 |      100 |      100 |      100 |                   |
+List.js       |      100 |      100 |      100 |      100 |                   |
+Pagination.js |      100 |      100 |      100 |      100 |                   |
+---------------|----------|----------|----------|----------|-------------------|
+
+Test Suites: 4 passed, 4 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        5.312s, estimated 6s
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br />

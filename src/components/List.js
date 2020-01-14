@@ -15,7 +15,7 @@ class List extends Component {
 		var keys = []
 
     for (var key in this.props.parentData.filteredDocuments[0]) {
-      keys.push(<div className="col col-md-2 font-weight-bold text-left">{key}</div>)
+      keys.push(<div className="col col-md-2 font-weight-bold text-left" key={key}>{key}</div>)
     }
 
 
@@ -32,11 +32,11 @@ class List extends Component {
                 {
           					this.props.parentData.filteredDocuments.map((document, i) => {
           						return (
-												<span>
+												<span key={document.number +  i}>
 												{
 													i >= (this.props.parentData.currentPage - 1) * 7 &&
 													i < (this.props.parentData.currentPage) * 7 &&
-          							<li className="list-group-item text-left" key={i}>
+          							<li className="list-group-item text-left" >
           								<div className="row small">
 														<div className="col col-md-2">
 															<span className={"badge " +  dict[document.status] }>

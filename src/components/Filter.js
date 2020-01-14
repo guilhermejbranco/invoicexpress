@@ -55,16 +55,16 @@ class Filter extends Component {
 								<div className="row">
 									<div className="col col-md-6">
 
-										<input className="form-control" type="text" placeholder={"Searching by " + this.state.filterBy} onChange={this.changeSearchInput}></input>
+										<input id="searchInput" className="form-control" type="text" placeholder={"Searching by " + this.state.filterBy} onChange={this.changeSearchInput}></input>
 									</div>
 									<div className="col col-md-6">
-										<select className="form-control form-control-sm h-100" onChange={this.changeFilter} value={this.state.filterBy}>
+										<select id="filterBy" className="form-control form-control-sm h-100" onChange={this.changeFilter} value={this.state.filterBy}>
 
 											{
 													keys.map((key, i) => {
 														return (
 
-																<option value={key}>{key}</option>
+																<option key={key + "_" + i} value={key}>{key}</option>
 
 														);
 													})
