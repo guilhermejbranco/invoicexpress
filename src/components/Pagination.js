@@ -1,9 +1,46 @@
 import React, { Component } from 'react';
 import '../styles/Pagination.scss';
 
+    // for other devs who might not know keyCodes
+  var NEXT_KEY = 39;
+  var PREVIOUS_KEY = 37;
+
+
 class Pagination extends Component {
 
   state = {currentPage : 1};
+
+
+
+  _handleKeyDown = (event) => {
+      switch( event.keyCode ) {
+          case NEXT_KEY:
+              if(document.getElementById("searchInput") != document.activeElement){
+                  this.changePage(this.state.currentPage + 1);
+              }
+              break;
+          case PREVIOUS_KEY:
+              if(document.getElementById("searchInput") != document.activeElement){
+                  this.changePage(this.state.currentPage - 1);
+              }
+              break;
+          default:
+              break;
+      }
+  };
+
+
+
+    // componentWillMount deprecated in React 16.3
+  componentDidMount(){
+      document.addEventListener("keydown", this._handleKeyDown);
+  };
+
+
+  componentWillUnmount() {
+
+      document.removeEventListener("keydown", this._handleKeyDown);
+  };
 
   changePage(page){
     if(page > 0 && page <= Math.ceil(this.props.parentData.filteredDocuments.length/7)){
