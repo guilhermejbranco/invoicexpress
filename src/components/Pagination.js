@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/List.scss';
+import '../styles/Pagination.scss';
 
 class Pagination extends Component {
 
@@ -29,7 +29,7 @@ class Pagination extends Component {
     }
 
 		return (
-            <nav aria-label="Page navigation example">
+            <nav aria-label="Page navigation example"  className="float-right ">
               <ul class="pagination">
 
                 <li className={"page-item" + (this.state.currentPage === 1 ? ' disabled' : '')}><a class="page-link" href="#" onClick={this.changePage.bind(this, this.state.currentPage - 1)}>Previous</a></li>

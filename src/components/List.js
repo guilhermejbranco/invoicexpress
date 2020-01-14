@@ -3,11 +3,24 @@ import '../styles/List.scss';
 
 class List extends Component {
 
-
 	render() {
-		console.log(this.props.parentData.filteredDocuments)
+		var dict = {
+			"Final":"badge-success",
+			"Draft":"badge-secondary",
+			"Cancelled":"badge-danger",
+			"Paid":"badge-warning"
+
+    }
+		var keys = []
+
+    for (var key in this.props.parentData.filteredDocuments[0]) {
+      keys.push(<div className="col col-md-2 font-weight-bold text-left">{key}</div>)
+    }
+
 
 		return (
+				<span className="w-75">
+						<div className="row small">{keys}</div>
             <ul className="list-group pt-2 pb-2">
                 {
           					this.props.parentData.filteredDocuments.map((document, i) => {
@@ -16,14 +29,18 @@ class List extends Component {
 												{
 													i >= (this.props.parentData.currentPage - 1) * 7 &&
 													i < (this.props.parentData.currentPage) * 7 &&
-          							<li className="list-group-item" key={i}>
-          								<div>
-                            {document.status} |
-                            {document.type} |
-                            {document.client_name} |
-                            {document.number} |
-                            {document.date} |
-                            {document.total_w_vat}
+          							<li className="list-group-item text-left" key={i}>
+          								<div className="row small">
+														<div className="col col-md-2">
+															<span className={"badge " +  dict[document.status] }>
+																{document.status}
+															</span>
+														</div>
+														<div className="col col-md-2">{document.type}</div>
+														<div className="col col-md-2">{document.number}</div>
+														<div className="col col-md-2">{document.client_name}</div>
+														<div className="col col-md-2">{document.date}</div>
+														<div className="col col-md-2 text-right">{document.total_w_vat}</div>
           								</div>
           							</li>
 												}
@@ -32,6 +49,7 @@ class List extends Component {
           					})
           				}
             </ul>
+					</span>
         );
     }
 }

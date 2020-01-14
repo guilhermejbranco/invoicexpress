@@ -20,11 +20,13 @@ class App extends Component{
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="App-header pt-3 pb-3">
           <Filter parentCallback={this.filterCallbackFunction}></Filter>
+        </header>
+        <div className="container mt-5">
           <List parentData={this.state}></List>
           <Pagination parentData={this.state} parentCallback={this.paginationCallbackFunction}></Pagination>
-        </header>
+        </div>
       </div>
     );
   }

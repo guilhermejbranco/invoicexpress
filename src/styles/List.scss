@@ -2,7 +2,12 @@
 @import "./variables";
 
 .list-group-item{
+  border-radius: 0px !important;
   div{
-    color: $secondarycolor;
+    color: black;
   }
+}
+
+.badge{
+  width: 50%;
 }

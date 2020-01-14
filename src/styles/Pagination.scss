@@ -1,0 +1,28 @@
+// Utilities
+@import "./variables";
+
+.pagination {
+  font-size: 0.7em;
+}
+
+.page-item.active{
+
+  .page-link {
+      background-color: $secondarycolor !important;
+      border-color: $secondarycolor !important;
+
+  }
+}
+
+.page-item{
+
+  .page-link {
+
+      color: $secondarycolor;
+
+  }
+}
+
+.page-link:hover {
+color: $primarycolor !important;
+}

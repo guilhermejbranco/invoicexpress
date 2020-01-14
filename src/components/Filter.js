@@ -45,29 +45,36 @@ class Filter extends Component {
       keys.push(key)
     }
     return (
-          <div className="row w-100 pt-2 pb-2">
+          <div className="row w-100 pt-2 pb-2 container ">
 
-						<div className="col-md-4">
-							<input className="form-control" type="text" placeholder="Search input here…" onChange={this.changeSearchInput}></input>
+						<div className="col-md-6">
+							<h6 className="text-uppercase text-left mt-2"><span className="font-weight-light">Documents</span><span className="font-weight-bolder">Xpress</span></h6>
 						</div>
 
-							<div className="col-md-4">
-								<select className="form-control form-control-sm w-100" onChange={this.changeFilter} value={this.state.filterBy}>
+							<div className="col-md-6">
+								<div className="row">
+									<div className="col col-md-6">
 
-									{
-											keys.map((key, i) => {
-												return (
+										<input className="form-control" type="text" placeholder={"Searching by " + this.state.filterBy} onChange={this.changeSearchInput}></input>
+									</div>
+									<div className="col col-md-6">
+										<select className="form-control form-control-sm h-100" onChange={this.changeFilter} value={this.state.filterBy}>
 
-														<option value={key}>{key}</option>
+											{
+													keys.map((key, i) => {
+														return (
 
-												);
-											})
-										}
-								</select>
-							</div>
+																<option value={key}>{key}</option>
 
-								<div className="col-md-4">
+														);
+													})
+												}
+										</select>
+									</div>
 								</div>
+
+
+							</div>
           </div>
     );
     }
