@@ -39,18 +39,18 @@ class List extends Component {
 	ordered by that key, calls a function to reverse the order by that key.
 	*/
   changeOrder = (e, key) => {
-    if (e == this.state.orderBy) {
+    if (e === this.state.orderBy) {
       this.reverseOrder();
     } else {
       this.setState({ orderBy: e });
       if (isNaN(this.state.filteredDocuments[0][e])) {
-        if (this.state.orderType == "desc") {
+        if (this.state.orderType === "desc") {
           this.setState({filteredDocuments: this.state.filteredDocuments.sort((a, b) => a[e].localeCompare(b[e]))});
         } else {
           this.setState({filteredDocuments: this.state.filteredDocuments.sort((a, b) => b[e].localeCompare(a[e]))});
         }
       } else {
-        if (this.state.orderType == "desc") {
+        if (this.state.orderType === "desc") {
           this.setState({filteredDocuments: this.state.filteredDocuments.sort((a, b) => b[e] - a[e])});
         } else {
           this.setState({filteredDocuments: this.state.filteredDocuments.sort((a, b) => a[e] - b[e])});
