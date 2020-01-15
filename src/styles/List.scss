@@ -15,9 +15,8 @@
 
 
 .list-group{
-
+  border-top:1px solid rgba(0,0,0,.125);
   span { li{background: white; border-top:none;}}
-  span:first-child { li{background: white; border-top:1px solid rgba(0,0,0,.125);}}
   span:nth-child(odd) { li{background: rgba(0,0,0,0.03); }}
 
 }
@@ -29,7 +28,7 @@
    -khtml-user-select: none; /* Konqueror HTML */
      -moz-user-select: none; /* Old versions of Firefox */
       -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; 
+          user-select: none;
 }
 
 .badge{

@@ -122,7 +122,7 @@ class List extends Component {
             .
           </span>
         )}
-        <ul className="list-group pt-2 pb-2">
+        <ul className="list-group pb-2">
           {this.state.filteredDocuments.map((document, i) => {
             return (
               /*
