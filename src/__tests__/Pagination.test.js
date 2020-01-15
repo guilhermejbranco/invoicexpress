@@ -2,6 +2,8 @@ import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
 import { render } from '@testing-library/react';
 import Pagination from '../components/Pagination';
+import App from '../components/App';
+import Filter from '../components/Filter';
 import {mount, shallow, configure} from 'enzyme';
 import data from "../assets/resources/documents";
 
@@ -68,5 +70,15 @@ describe('Pagination component', () => {
     wrapper.find('#next-page').simulate('click');
     expect(wrapper.find("#next-page").hasClass("disabled"))
     expect(wrapper.state('currentPage')).toBe(Math.ceil(state.filteredDocuments.length/7));
+    var event = new KeyboardEvent('keydown', {'keyCode': 37});
+    document.dispatchEvent(event);
+    expect(wrapper.state('currentPage')).toBe(Math.ceil(state.filteredDocuments.length/7)-1);
+    var event = new KeyboardEvent('keydown', {'keyCode': 39});
+    document.dispatchEvent(event);
+    expect(wrapper.state('currentPage')).toBe(Math.ceil(state.filteredDocuments.length/7));
+    var event = new KeyboardEvent('keydown', {'keyCode': 40});
+    document.dispatchEvent(event);
+    expect(wrapper.state('currentPage')).toBe(Math.ceil(state.filteredDocuments.length/7));
+
   });
 });

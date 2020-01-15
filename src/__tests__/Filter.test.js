@@ -9,7 +9,7 @@ configure({adapter: new Adapter()});
 
 var state = {
   filterBy: "client_name",
-  searchInput: "",
+  searchInput: "", 
   currentPage : 1,
   filteredDocuments : data.documents
   }

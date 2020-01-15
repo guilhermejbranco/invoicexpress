@@ -45,31 +45,15 @@ class List extends Component {
       this.setState({ orderBy: e });
       if (isNaN(this.state.filteredDocuments[0][e])) {
         if (this.state.orderType == "desc") {
-          this.setState({
-            filteredDocuments: this.state.filteredDocuments.sort((a, b) =>
-              a[e].localeCompare(b[e])
-            )
-          });
+          this.setState({filteredDocuments: this.state.filteredDocuments.sort((a, b) => a[e].localeCompare(b[e]))});
         } else {
-          this.setState({
-            filteredDocuments: this.state.filteredDocuments.sort((a, b) =>
-              b[e].localeCompare(a[e])
-            )
-          });
+          this.setState({filteredDocuments: this.state.filteredDocuments.sort((a, b) => b[e].localeCompare(a[e]))});
         }
       } else {
         if (this.state.orderType == "desc") {
-          this.setState({
-            filteredDocuments: this.state.filteredDocuments.sort(
-              (a, b) => b[e] - a[e]
-            )
-          });
+          this.setState({filteredDocuments: this.state.filteredDocuments.sort((a, b) => b[e] - a[e])});
         } else {
-          this.setState({
-            filteredDocuments: this.state.filteredDocuments.sort(
-              (a, b) => a[e] - b[e]
-            )
-          });
+          this.setState({filteredDocuments: this.state.filteredDocuments.sort((a, b) => a[e] - b[e])});
         }
       }
     }
@@ -102,6 +86,7 @@ class List extends Component {
           onClick={this.changeOrder.bind(this, key)}
           value={key}
           key={key}
+          id={key}
         >
           {key}
           {key === this.state.orderBy && this.state.orderType === "asc" && (
