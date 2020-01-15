@@ -10,6 +10,7 @@ class Filter extends Component {
   state = {
     filterBy: this.props.parentData.filterBy,
     searchInput: this.props.parentData.searchInput,
+		orderBy: 'client_name',
     filteredDocuments: []
   };
 
@@ -30,9 +31,9 @@ class Filter extends Component {
         filteredDocuments.push(data.documents[i]);
       }
     }
-		filteredDocuments.sort((a,b) => a.client_name.localeCompare(b.client_name));
 
-    this.setState({ filteredDocuments: filteredDocuments }, () => {
+
+    this.setState({ filteredDocuments: filteredDocuments.sort((a,b) => a.client_name.localeCompare(b.client_name)) }, () => {
       this.props.parentCallback(this.state);
     });
   }
@@ -63,6 +64,7 @@ class Filter extends Component {
 	*/
   componentDidMount() {
     this.updateDocument();
+
   }
 
   render() {

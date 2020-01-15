@@ -2,9 +2,9 @@ $primarycolor: #00BB80;
 $secondarycolor:#007751;
 
 .primarycolor{
-  color: $primarycolor;
+  color: $primarycolor !important;
 }
 
 .secondarycolor{
-  color: $secondarycolor;
+  color: $secondarycolor !important;
 }

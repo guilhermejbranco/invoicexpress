@@ -5,6 +5,7 @@ import Filter from "./Filter";
 import Pagination from "./Pagination";
 import Cookies from "universal-cookie";
 
+
 const cookies = new Cookies();
 
 class App extends Component {
@@ -51,7 +52,7 @@ class App extends Component {
   Before mounting, checks if there are saved cookies in the browser. If so,
   sets the state to said cookies.
   */
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     if (cookies.get("filterBy") != null) {
       this.setState({ filterBy: cookies.get("filterBy") });
     }
