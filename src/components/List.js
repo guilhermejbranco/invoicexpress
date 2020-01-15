@@ -75,12 +75,14 @@ class List extends Component {
 		This will be the title in each column. Checks to see which of the keys is being
 		used to order. Also, adds an up or down icon if the order is ascending or descending.
 		*/
+    var keysElement = [];
     var keys = [];
+
     for (var key in this.state.filteredDocuments[0]) {
-      keys.push(
+      keysElement.push(
         <div
           className={
-            "col col-md-2 font-weight-bold text-left border-0 text-uppercase pointer " +
+            "d-none d-md-block col-sm-2 col-md-2 font-weight-bold text-left border-0 text-uppercase pointer " +
             (key === this.state.orderBy ? "primarycolor" : "")
           }
           onClick={this.changeOrder.bind(this, key)}
@@ -98,12 +100,13 @@ class List extends Component {
           )}
         </div>
       );
+      keys.push(key)
     }
 
     return (
       <span className="w-100">
         <div className="list-group-item small border-0">
-          <div className="row">{keys}</div>
+          <div className="row">{keysElement}</div>
         </div>
 
         {/*
@@ -130,19 +133,31 @@ class List extends Component {
                   i < this.props.parentData.currentPage * 7 && (
                     <li className="list-group-item text-left">
                       <div className="row small">
-                        <div className="col col-md-2 border-0">
-                          <span className={"badge " + dict[document.status]}>
-                            {document.status}
+                        <div className="col-12 col-md-2 border-0">
+
+                          <span className={"badge " + dict[document[keys[0]]]}>
+                            {document[keys[0]]}
                           </span>
                         </div>
-                        <div className="col col-md-2">{document.type}</div>
-                        <div className="col col-md-2">{document.number}</div>
-                        <div className="col col-md-2">
-                          {document.client_name}
+                        <div className="col-6 col-md-2">
+                          <span className="d-inline-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[1]]}: </span>
+                          <span> {document[keys[1]]}</span>
                         </div>
-                        <div className="col col-md-2">{document.date}</div>
-                        <div className="col col-md-2 text-right">
-                          {document.total_w_vat}
+                        <div className="col-6 col-md-2">
+                          <span className="d-inline-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[2]]}: </span>
+                          {document[keys[2]]}
+                        </div>
+                        <div className="col-6 col-md-2">
+                          <span className="d-inline-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[3]]}: </span>
+                          {document[keys[3]]}
+                        </div>
+                        <div className="col-6 col-md-2">
+                        <span className="d-inline-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[4]]}: </span>
+                          {document[keys[4]]}
+                        </div>
+                        <div className="col-6 col-md-2">
+                        <span className="d-inline-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[5]]}: </span>
+                          {document[keys[5]]}
                         </div>
                       </div>
                     </li>
