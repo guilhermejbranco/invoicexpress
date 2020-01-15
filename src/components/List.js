@@ -140,23 +140,23 @@ class List extends Component {
                           </span>
                         </div>
                         <div className="col-6 col-md-2">
-                          <span className="d-inline-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[1]]}: </span>
+                          <span className="d-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[1]]}: </span>
                           <span> {document[keys[1]]}</span>
                         </div>
                         <div className="col-6 col-md-2">
-                          <span className="d-inline-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[2]]}: </span>
+                          <span className="d-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[2]]}: </span>
                           {document[keys[2]]}
                         </div>
                         <div className="col-6 col-md-2">
-                          <span className="d-inline-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[3]]}: </span>
+                          <span className="d-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[3]]}: </span>
                           {document[keys[3]]}
                         </div>
                         <div className="col-6 col-md-2">
-                        <span className="d-inline-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[4]]}: </span>
+                        <span className="d-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[4]]}: </span>
                           {document[keys[4]]}
                         </div>
-                        <div className="col-6 col-md-2">
-                        <span className="d-inline-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[5]]}: </span>
+                        <div className="col-6 col-md-2 text-md-right">
+                        <span className="d-block font-weight-bold d-md-none pt-3 mr-3"> {[keys[5]]}: </span>
                           {document[keys[5]]}
                         </div>
                       </div>
