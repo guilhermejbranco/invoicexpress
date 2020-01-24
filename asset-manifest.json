@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/invoicexpress/static/css/main.78de7119.chunk.css",
+    "main.js": "/invoicexpress/static/js/main.5c9e1ee3.chunk.js",
+    "main.js.map": "/invoicexpress/static/js/main.5c9e1ee3.chunk.js.map",
+    "runtime-main.js": "/invoicexpress/static/js/runtime-main.72dddc95.js",
+    "runtime-main.js.map": "/invoicexpress/static/js/runtime-main.72dddc95.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/invoicexpress/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.7a424000.chunk.js": "/invoicexpress/static/js/2.7a424000.chunk.js",
+    "static/js/2.7a424000.chunk.js.map": "/invoicexpress/static/js/2.7a424000.chunk.js.map",
+    "index.html": "/invoicexpress/index.html",
+    "precache-manifest.c52fb5f0961d8d85267cba824aaf029e.js": "/invoicexpress/precache-manifest.c52fb5f0961d8d85267cba824aaf029e.js",
+    "service-worker.js": "/invoicexpress/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/invoicexpress/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.78de7119.chunk.css.map": "/invoicexpress/static/css/main.78de7119.chunk.css.map",
+    "static/js/2.7a424000.chunk.js.LICENSE": "/invoicexpress/static/js/2.7a424000.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.72dddc95.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.7a424000.chunk.js",
+    "static/css/main.78de7119.chunk.css",
+    "static/js/main.5c9e1ee3.chunk.js"
+  ]
+}
